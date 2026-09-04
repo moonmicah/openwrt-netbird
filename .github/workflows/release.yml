@@ -137,10 +137,7 @@ jobs:
           ./scripts/feeds install -a
 
           rm -rf ./feeds/packages/lang/golang
-          #git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 25.x ./feeds/packages/lang/golang
-          git clone --filter=blob:none https://github.com/sbwml/packages_lang_golang ./feeds/packages/lang/golang
-          git -C ./feeds/packages/lang/golang fetch --depth=1 origin 04bb817b0282bb2b443f25bc1985647b373a308c
-          git -C ./feeds/packages/lang/golang checkout FETCH_HEAD
+          git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
           make defconfig
           make package/netbird/compile V=s CONFIG_NETBIRD_COMPRESS_UPX=y
